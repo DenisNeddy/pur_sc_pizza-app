@@ -1,13 +1,25 @@
 .button {
-    
-    padding: 8px 30px;
-    font-family: inherit;
-    font-size: 16px;
+    font-family: inherit; 
+    font-style: normal;
+    font-weight: 400;
     color: var(--white-color);
     border: none;
-    border-radius: 6px;
-    cursor: pointer;
+    cursor: pointer; 
     transition: background 0.25s;
+    border-radius: 29px;
+}
+
+.small {
+    padding: 10px 25px;
+    font-size: 16px;
+    
+   
+}
+
+.big {
+    padding: 20px 60px;
+    font-size: 15px;
+    text-transform: uppercase;
 }
 
 .accent {

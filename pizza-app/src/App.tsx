@@ -2,6 +2,7 @@
 
 import Button from './components/Button/Button';
 import { MouseEvent, useState } from 'react';
+import Input from './components/Input/Input';
 
 function App() {
   
@@ -20,6 +21,8 @@ function App() {
 	return (
 		<>
 			<Button onClick={addCounter}>Кнопочка</Button>
+			<Button onClick={addCounter} appearence='big'>Кнопочка 2</Button>
+			<Input placeholder='Email'/>
 		</>
 	);
 }
