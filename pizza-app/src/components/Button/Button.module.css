@@ -1,4 +1,7 @@
 .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: inherit; 
     font-style: normal;
     font-weight: 400;
@@ -10,14 +13,14 @@
 }
 
 .small {
-    padding: 10px 25px;
+    padding: 10px 0;
     font-size: 16px;
     
    
 }
 
 .big {
-    padding: 20px 60px;
+    padding: 20px 0;
     font-size: 15px;
     text-transform: uppercase;
 }

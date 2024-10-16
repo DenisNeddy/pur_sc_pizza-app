@@ -4,10 +4,10 @@ import cn from 'classnames';
 
 const Button = ({ children, appearence = 'small', className, ...props}: ButtonProps) => {
 	return (
-		<button className={cn(styles['button'], styles['accent'], className, {
+		<button className={cn(styles['button'], styles['accent'], {
 			[styles['small']] : appearence === 'small',
 			[styles['big']] : appearence === 'big'
-		})} {...props}>{ children }</button>
+		},  className)} {...props}>{ children }</button>
 	);
 };
 
