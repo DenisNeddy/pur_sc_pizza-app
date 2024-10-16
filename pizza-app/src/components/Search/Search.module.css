@@ -1,0 +1,28 @@
+.input {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--text-color);
+    outline: none; 
+    border: none;
+    background-color: transparent;
+    min-width: 180px;
+}
+
+.search__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 13px; 
+    padding: 20px;
+    background-color: #FCFCFD; 
+    border-radius: 10px;
+    border: 1px solid #EEE;
+    box-shadow: 15px 20px 45px 0px rgba(233,233,233,0.252);
+    
+}
+
+.search__icon {
+    width: 14px;
+    height: 14px;
+}
