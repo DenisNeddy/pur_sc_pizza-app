@@ -56,6 +56,16 @@
     line-height: 1.5;
     color: var(--text-color);
     text-decoration: none;
+    transition: color 0.25s ease;
+ }
+
+ .menu__nav-link:hover {
+    color: var(--primary-color);
+ }
+
+ .active {
+    color: var(--primary-color);
+
  }
 
  .menu__cart-counter {
