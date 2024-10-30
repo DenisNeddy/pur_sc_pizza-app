@@ -1,13 +1,26 @@
-import { useLoaderData } from 'react-router-dom';
+import { Await, useLoaderData } from 'react-router-dom';
 import { ProductData } from '../../interfaces/product.interface';
-const Product = () => {
+import { Suspense } from 'react';
 
-	const data = useLoaderData() as ProductData;
+const Product = () => {
+	const data = useLoaderData() as {data: ProductData};
 	
 	return (
-		<div>
-            Продукт под номером {data.name}
-		</div>
+		<>
+			<Suspense fallback={<>Загружаю....</>}>
+
+				<Await
+					resolve={data.data}
+				>
+					{
+						({data}: {data: ProductData}) => (
+							<> Продукт под номером {data.name}</>
+						)
+					}
+				</Await>
+			</Suspense>
+           
+		</>
 	);
 };
 
