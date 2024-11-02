@@ -1,6 +1,7 @@
 import styles from './ProductCard.module.css';
 import { ProductCardProps } from './ProductCard.props';
 import { Link } from 'react-router-dom';
+import Rating from '../Rating/Rating';
 
 const ProductCard = (props:ProductCardProps) => {
 	return (
@@ -14,9 +15,8 @@ const ProductCard = (props:ProductCardProps) => {
 					<button className={styles['add-to-cart']}>
 						<img src='/cart_icon_white.svg' alt="Кнопка добавления товара в карзину" />
 					</button>
-					<div className={styles['rating']}>
-						{props.rating} &nbsp;
-						<img src="/star_icon.svg" alt="Иконка звезда рейтинга" />
+					<div className={styles['rating__wrap']}>
+				    	<Rating rating={props.rating} />
 					</div>
 				</div>
 				<div className={styles['footer']}>
