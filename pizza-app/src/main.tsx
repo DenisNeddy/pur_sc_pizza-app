@@ -13,6 +13,7 @@ import { defer } from 'react-router-dom';
 import AuthLayout from './layout/Auth/AuthLayout';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
+import RequireAuth from './helpers/RequireAuth';
 
 
 const Menu = lazy(() => import('./pages/Menu/Menu'));
@@ -20,7 +21,7 @@ const Menu = lazy(() => import('./pages/Menu/Menu'));
 const router = createBrowserRouter([
 	{
 		path: '/',
-		element: <Layout />,
+		element: <RequireAuth><Layout /></RequireAuth>,
 		children: [
 			{
 				path: '/',
