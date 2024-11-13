@@ -3,7 +3,7 @@ import styles from './Layout.module.css';
 import Button from '../../components/Button/Button';
 import cn from 'classnames';
 import { useDispatch } from 'react-redux';
-import { AppDispath } from '../../store/store';
+import { AppDispatch } from '../../store/store';
 import { getProfile, userActions } from '../../store/user.slice';
 import { useEffect } from 'react';
 import { RootState } from '../../store/store';
@@ -12,15 +12,16 @@ import { useSelector } from 'react-redux';
 
 const Layout = () => {
 	const navigate = useNavigate();
-	const dispath = useDispatch<AppDispath>();
+	const dispatch = useDispatch<AppDispatch>();
 	const profile = useSelector((s: RootState) => s.user.profile);
+	const items = useSelector((s: RootState) => s.cart.items);
 
 	useEffect(() => {
-		dispath(getProfile());
-	}, [dispath]);
+		dispatch(getProfile());
+	}, [dispatch]);
 
 	const logout = () => {
-		dispath(userActions.logout());
+		dispatch(userActions.logout());
 		navigate('/auth/login');
 
 	};
@@ -43,7 +44,8 @@ const Layout = () => {
 					})}> <img src={'menu_icon.svg'} alt="иконка меню" />Меню</NavLink>
 					<NavLink to='/cart' className={({isActive}) => cn(styles['menu__nav-link'], {
 						[styles.active]: isActive
-					})}><img src={'cart_icon.svg'} alt="иконка меню" />Корзина<span className={styles['menu__cart-counter']}>2</span></NavLink>
+					})}>
+						<img src={'cart_icon.svg'} alt="иконка меню" />Корзина<span className={styles['menu__cart-counter']}>{items.reduce((acc,i) => acc += i.count, 0)}</span></NavLink>
 				</div>
 				
 				<Button 

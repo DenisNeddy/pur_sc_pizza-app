@@ -8,7 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FormEvent, useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { AppDispath } from '../../store/store';
+import { AppDispatch } from '../../store/store';
 import { login, userActions } from '../../store/user.slice';
 import { RootState } from '../../store/store';
 
@@ -26,7 +26,7 @@ const Login = () => {
 	const [valueEmail, setValueEmail] = useState<string>('');
 	const [valuePassword, setValuePassword] = useState<string>('');
 	const navigate = useNavigate();
-	const dispatch = useDispatch<AppDispath>();
+	const dispatch = useDispatch<AppDispatch>();
 	const {jwt, loginErrorMessage} = useSelector((s: RootState) => s.user);
 
 
