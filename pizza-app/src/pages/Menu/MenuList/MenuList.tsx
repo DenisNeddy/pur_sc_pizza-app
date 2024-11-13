@@ -8,7 +8,7 @@ const MenuList = ({ products }:MenuListProps) => {
 			<ProductCard 
 				key={p.id}
 				id={p.id}
-				title={p.name}
+				title={p.title}
 				description={p.ingredients.join(', ')}
 				rating={p.rating}
 				price={p.price}
