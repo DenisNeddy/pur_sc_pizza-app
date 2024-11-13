@@ -1,0 +1,10 @@
+.cart__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 512px;
+}
+
+.cart__headling {
+    margin-bottom: 40px;
+}

@@ -18,27 +18,24 @@ const CartItem = (props:CartItemProps) => {
 
 	return (
 		
-		<div className={styles['head']}>
+		<div className={styles['item']}>
 			<div className={styles['image']} style={{backgroundImage: `url('${props.image}')`}}></div>
 			<div className={styles['description']}>
-				<div className={styles['name']}>{props.title}</div>
-				<div className={styles['currency']}>{props.price} &nbsp;₽</div>
+				<div className={styles['name']}>{props.name}</div>
+				<div className={styles['price']}>{props.price} &nbsp;₽</div>
 			</div>
 			<div className={styles['actions']}>
 				<button className={styles['button']} onClick={decrease}>
-					<img src='/cart_icon_white.svg' alt="Уменьшить количество товара" />
+					<img src='/cart_icon_minus.svg' alt="Уменьшить количество товара" />
 				</button>
 				<div>{props.count}</div>
 				<button className={styles['button']} onClick={increase}>
-					<img src='/cart_icon_white.svg' alt="Увеличить количество товара" />
+					<img src='/cart_icon_plus.svg' alt="Увеличить количество товара" />
 				</button>
 				<button className={styles['remove']} onClick={remove}>
-					<img src='/cart_icon_white.svg' alt="Удалить товар" />
+					<img src='/cart_close_icon.svg' alt="Удалить товар" />
 				</button>
-
-			</div>
-		
-			
+			</div>	
 		</div>
 	);
 };

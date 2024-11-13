@@ -1,6 +1,6 @@
 export interface ProductData {
     id: number
-    title: string
+    name: string
     price: number
     ingredients: string[]
     image: string
